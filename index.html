@@ -36,89 +36,153 @@
       }
 
       .header {
-    min-height: 60vh;
-    background: var(--gradient);
-    color: white;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-  }
+        min-height: 60vh;
+        background: var(--gradient);
+        color: white;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        font-family: Arial, sans-serif;
+      }
 
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("/api/placeholder/1920/1080") center/cover;
-    opacity: 0.1;
-    z-index: 0;
-  }
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("/api/placeholder/1920/1080") center/cover;
+        opacity: 0.1;
+        z-index: 0;
+      }
 
-  .header-image {
-    position: absolute;
-    z-index: 2;
-  }
+      .header-image {
+        position: absolute;
+        z-index: 2;
+      }
 
-  .header-image-left {
-    top: 1rem;
-    left: 1rem;
-  }
+      .header-image-left {
+        top: 1rem;
+        left: 1rem;
+      }
 
-  .header-image-right {
-    top: 1rem;
-    right: 1rem;
-  }
+      .header-image-right {
+        top: 1rem;
+        right: 1rem;
+      }
 
-  .header-image img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
+      .header-image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
 
-  .header-content {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
-  }
+      .header-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+      }
 
-  .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
 
-  .header p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    opacity: 0.9;
-  }
+      .header h2 {
+        font-size: 1.8rem;
+        margin: 0.5rem 0;
+      }
 
-  .header-content p:nth-child(2) {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+      .header h3 {
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+      }
 
-  .header-content p:nth-child(3),
-  .header-content p:nth-child(4),
-  .header-content p:nth-child(5),
-  .header-content p:nth-child(6) {
-    font-weight: normal;
-  }
+      .header h4 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0 1.5rem 0;
+      }
 
-  .countdown-timer {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    color: yellow;
-  }
+      /* Date Box Styles */
+      .date-box {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .date-box h2 {
+        color: #66ffcc; /* Changed from yellow to mint green */
+        margin: 0;
+      }
+
+      /* Countdown Styles */
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .countdown-number {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #66ffcc; /* Changed from yellow to mint green */
+        margin-bottom: 0.2rem;
+      }
+
+      .countdown-label {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .countdown-container {
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .countdown-box {
+          width: 80px;
+          height: 80px;
+        }
+
+        .countdown-number {
+          font-size: 1.8rem;
+        }
+      }
 
       .navbar {
         background-color: white;
@@ -381,30 +445,45 @@
   <body>
     <header class="header">
       <div class="header-image header-image-left">
-        <img
-          src="t_500x300.jpeg"
-          alt="Kongu Engineering College"
-          style="border-radius: 50%;"
-        />
+        <img src="t_500x300.jpeg" alt="Kongu Engineering College" />
       </div>
+
       <div class="header-image header-image-right">
-        <img
-          src="th.jpeg"
-          alt="CSI - KEC Student Branch"
-          style="border-radius: 50%;"
-        />
+        <img src="th.jpeg" alt="CSI - KEC Student Branch" />
       </div>
+
       <div class="header-content">
         <h1>National Conference on Innovative Trends in Technologies</h1>
-        <p>NCITT 2025</p>
-        <p>Computer Society of India</p>
-        <p>Kongu Engineering College</p>
-        <p>Perundurai - 638 060</p>
-        <p id="countdown" class="countdown-timer"></p>
+        <h2>NCITT 2025</h2>
+        <h2>Computer Society of India</h2>
+        <h3>Kongu Engineering College,</h3>
+        <h4>Perundurai - 638 052</h4>
+
+        <div class="date-box">
+          <h2>01 March 2025</h2>
+        </div>
+
+        <div class="countdown-container">
+          <div class="countdown-box">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
       </div>
     </header>
-    
-    
+
     <nav class="navbar">
       <ul>
         <li><a href="#about">About</a></li>
@@ -433,9 +512,7 @@
           real-world problems.
         </p>
       </div>
-    </section>
-
-    <section id="about" class="section" data-aos="fade-up">
+      <br />
       <h2>About KEC</h2>
       <div class="about-card">
         <p>
@@ -452,9 +529,7 @@
           educational institutions.
         </p>
       </div>
-    </section>
-
-    <section id="about" class="section" data-aos="fade-up">
+      <br />
       <h2>About CSI</h2>
       <div class="about-card">
         <p>
@@ -687,35 +762,45 @@
           }
         });
       });
-      
-  // Countdown Timer
-  function startCountdown(eventDate) {
-    const countdownElement = document.getElementById("countdown");
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+      // Countdown Timer
+      function updateCountdown() {
+        const conferenceDate = new Date("2025-03-01T00:00:00").getTime();
 
-      if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        function update() {
+          const now = new Date().getTime();
+          const difference = conferenceDate - now;
 
-        countdownElement.innerHTML = `Event starts in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-      } else {
-        countdownElement.innerHTML = "The event has started!";
-        clearInterval(interval);
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (difference % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = String(days).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("minutes").textContent = String(
+            minutes
+          ).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(
+            seconds
+          ).padStart(2, "0");
+        }
+
+        update();
+        setInterval(update, 1000);
       }
-    }
 
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  }
-
-  // Set event date: March 1, 2025
-  const eventDate = new Date("March 1, 2025 00:00:00").getTime();
-  startCountdown(eventDate);
+      updateCountdown();
     </script>
   </body>
 </html>
