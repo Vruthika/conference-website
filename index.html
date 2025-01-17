@@ -184,6 +184,32 @@
         }
       }
 
+      .register-container {
+  margin-top: 2rem;
+}
+
+.register-btn {
+  display: inline-block;
+  background: #ffcc00; /* Yellow button color */
+  color: #333; /* Text color */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-btn:hover {
+  background: #ffc107; /* Slightly darker yellow on hover */
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
       .navbar {
         background-color: white;
         padding: 1rem;
@@ -233,55 +259,69 @@
       }
 
       .section {
-        padding: 6rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-      .section h2 {
-        color: var(--primary-color);
-        margin-bottom: 3rem;
-        text-align: center;
-        font-size: 2.5rem;
-        position: relative;
-        padding-bottom: 1.5rem;
-      }
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
 
-      .section h2::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 4px;
-        background: var(--gradient);
-        border-radius: 2px;
-      }
+.section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
 
-      .about-card {
-        background: white;
-        padding: 3rem;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        margin-bottom: 2rem;
-        transition: transform 0.3s ease;
-      }
+.about-card {
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+  gap: 2rem;
+}
 
-      .about-card:hover {
-        transform: translateY(-5px);
-      }
+.about-card:hover {
+  transform: translateY(-5px);
+}
 
-      .about-card h3 {
-        color: var(--secondary-color);
-        margin-bottom: 1.5rem;
-        font-size: 1.8rem;
-      }
+.about-content {
+  flex: 1;
+}
 
-      .about-card p {
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-      }
+.about-content p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.about-image {
+  flex: 0 0 35%; /* Image width */
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%; /* Make the image responsive */
+  border-radius: 15px; /* Rounded corners */
+}
+
+
 
       .topics-grid {
         display: grid;
@@ -440,6 +480,61 @@
           margin: 2rem auto;
         }
       }
+      .section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  flex: 1;
+  max-width: 45%;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-details hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.contact-details p {
+  margin-bottom: 1rem;
+}
+
+.contact-details a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.map {
+  flex: 1;
+  max-width: 45%;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+}
+
     </style>
   </head>
   <body>
@@ -450,22 +545,22 @@
           alt="Kongu Engineering College"
         />
       </div>
-
+    
       <div class="header-image header-image-right">
         <img src="th.jpeg" alt="CSI - KEC Student Branch" />
       </div>
-
+    
       <div class="header-content">
         <h1>National Conference on Innovative Trends in Technologies</h1>
         <h2>NCITT 2025</h2>
         <h2>Computer Society of India</h2>
         <h3>Kongu Engineering College,</h3>
         <h4>Perundurai - 638 052</h4>
-
+    
         <div class="date-box">
           <h2>01 March 2025</h2>
         </div>
-
+    
         <div class="countdown-container">
           <div class="countdown-box">
             <span class="countdown-number" id="days">00</span>
@@ -484,9 +579,20 @@
             <span class="countdown-label">Seconds</span>
           </div>
         </div>
+    
+        <!-- Register Now Button -->
+        <div class="register-container">
+          <a
+            href="https://forms.gle/prSfbtKFnrt2qJWFA"
+            target="_blank"
+            class="register-btn"
+          >
+            Register Now
+          </a>
+        </div>
       </div>
     </header>
-
+    
     <nav class="navbar">
       <ul>
         <li><a href="#about">About</a></li>
@@ -500,57 +606,77 @@
     <section id="about" class="section" data-aos="fade-up">
       <h2>About the Conference</h2>
       <div class="about-card">
-        <p>
-          The National Conference on Innovative Trends in Technologies (NCITT
-          2025) is a premier academic conference that brings together
-          researchers, academicians, industry professionals, and students to
-          share their innovative ideas and research findings in the field of
-          emerging technologies.
-        </p>
-        <p>
-          This conference provides an excellent platform for knowledge exchange,
-          networking, and collaboration among participants from various
-          institutions and organizations. The conference aims to highlight the
-          latest technological advancements and their applications in solving
-          real-world problems.
-        </p>
+        <div class="about-content">
+          <p>
+            The National Conference on Innovative Trends in Technologies (NCITT
+            2025) is a premier academic conference that brings together
+            researchers, academicians, industry professionals, and students to
+            share their innovative ideas and research findings in the field of
+            emerging technologies.
+          </p>
+          <p>
+            This conference provides an excellent platform for knowledge exchange,
+            networking, and collaboration among participants from various
+            institutions and organizations. The conference aims to highlight the
+            latest technological advancements and their applications in solving
+            real-world problems.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="robot.jpeg" alt="Robot" />
+        </div>
       </div>
       <br />
       <h2>About KEC</h2>
-      <div class="about-card">
-        <p>
-          Kongu Engineering College, established in 1983, stands as a premier
-          educational institution affiliated to Anna University Chennai. Located
-          on a sprawling 167-acre campus in Erode District, Tamil Nadu, KEC has
-          emerged as a leader in professional and career-oriented education.
-        </p>
-        <p>
-          The institution offers cutting-edge programs at the intersection of
-          theory and practice, fostering an environment of rigorous scholarship
-          and innovation. With state-of-the-art infrastructure and excellent
-          academic records, KEC has earned recognition as one of India's reputed
-          educational institutions.
-        </p>
+      <div class="about-card reverse-layout">
+        <div class="about-image">
+          <img
+            src="https://images.shiksha.com/mediadata/images/1520420083phpyKP3vR.jpeg"
+            alt="KEC Campus"
+          />
+        </div>
+        
+        <div class="about-content">
+          <p>
+            Kongu Engineering College, established in 1983, stands as a premier
+            educational institution affiliated to Anna University Chennai. Located
+            on a sprawling 167-acre campus in Erode District, Tamil Nadu, KEC has
+            emerged as a leader in professional and career-oriented education.
+          </p>
+          <p>
+            The institution offers cutting-edge programs at the intersection of
+            theory and practice, fostering an environment of rigorous scholarship
+            and innovation. With state-of-the-art infrastructure and excellent
+            academic records, KEC has earned recognition as one of India's reputed
+            educational institutions.
+          </p>
+        </div>
       </div>
       <br />
       <h2>About CSI</h2>
       <div class="about-card">
-        <p>
-          The Computer Society of India (CSI) is the first and largest body of
-          computer professionals in India. Formed in 1965, CSI has been
-          instrumental in guiding the Indian IT industry down the right path
-          since its formative years.
-        </p>
-        <p>
-          The CSI - KEC Student Branch actively organizes technical events,
-          workshops, and conferences to enhance students' technical knowledge
-          and professional skills. Through various activities, it provides a
-          platform for students to learn, interact, and grow in the field of
-          computer science and technology.
-        </p>
+        <div class="about-content">
+          <p>
+            The Computer Society of India (CSI) is the first and largest body of
+            computer professionals in India. Formed in 1965, CSI has been
+            instrumental in guiding the Indian IT industry down the right path
+            since its formative years.
+          </p>
+          <p>
+            The CSI - KEC Student Branch actively organizes technical events,
+            workshops, and conferences to enhance students' technical knowledge
+            and professional skills. Through various activities, it provides a
+            platform for students to learn, interact, and grow in the field of
+            computer science and technology.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="th.jpeg" alt="CSI Logo" />
+        </div>
       </div>
     </section>
-
+    
+    
     <section id="topics" class="section" data-aos="fade-up">
       <h2>Call for Papers</h2>
       <p style="text-align: center; margin-bottom: 2rem">
@@ -703,24 +829,42 @@
     </section>
 
     <section id="contact" class="section" data-aos="fade-up">
-      <div class="contact-details">
-        <h2>Contact Us</h2>
-        <p>xxx</p>
-        <p>xxx</p>
-        <p>xxx</p>
-        <p>xxx</p>
-        <p>xxx</p>
-      </div>
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.3111459449175!2d77.6091683146475!3d11.275579591982583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e3c8cfdc3c7%3A0x6844d2422a742843!2sKongu%20Engineering%20College!5e0!3m2!1sen!2sin!4v1676044776239!5m2!1sen!2sin"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
+      <h2>Contact Details</h2>
+      <div class="contact-container">
+        <!-- Contact Details -->
+        <div class="contact-details">
+          <p><strong>Vruthika L S</strong><br />
+            CSI Joint Secretary for Kongu Branch<br />
+            Department of Computer Science Engineering<br />
+            Kongu Engineering College, Perundurai<br />
+            +91 9345899429<br />
+            <a href="mailto:vruthikals.22cse@kongu.edu">vruthikals.22cse@kongu.edu</a>
+          </p>
+          <hr />
+          <p><strong>Thamil Vasanth G K</strong><br />
+            CSI Executive Member for Kongu Branch<br />
+            Department of Computer Science Engineering<br />
+            Kongu Engineering College, Perundurai<br />
+            +91 6380198466 (phone) / +91 9514594776 (whatsApp) <br />
+            <a href="mailto:thamilvasanthgk.22cse@kongu.edu">thamilvasanthgk.22cse@kongu.edu</a>
+          </p>
+        </div>
+    
+        <!-- Map Section -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.3111459449175!2d77.6091683146475!3d11.275579591982583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e3c8cfdc3c7%3A0x6844d2422a742843!2sKongu%20Engineering%20College!5e0!3m2!1sen!2sin!4v1676044776239!5m2!1sen!2sin"
+            width="400"
+            height="300"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
       </div>
     </section>
+    
 
     <footer class="footer">
       <p>© 2025 National Conference on Innovative Trends in Technologies</p>
