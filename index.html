@@ -539,7 +539,12 @@
         cursor: pointer;
       }
 
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
+        .header-content h1{
+          font-size: 2rem;
+          margin-top: 4rem;
+        }
+
         .header-image img {
           width: 60px;
           height: 60px;
@@ -592,7 +597,7 @@
   .general-content ol li:last-child {
     margin-bottom: 0;
   }
-      @media (max-width: 420px) {
+      @media (max-width: 800px) {
         .navbar ul {
           display: none;
           flex-direction: column;
@@ -671,16 +676,18 @@
     </header>
 
     <nav class="navbar">
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
       <ul id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#topics">Topics</a></li>
-        <li><a href="#dates">Important Dates</a></li>
-        <li><a href="#general">General Instructions</a></li>
-        <li><a href="#registration">Registration</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#topics" onclick="closeMenu()">Topics</a></li>
+        <li><a href="#dates" onclick="closeMenu()">Important Dates</a></li>
+        <li><a href="#general" onclick="closeMenu()">General Instructions</a></li>
+        <li><a href="#registration" onclick="closeMenu()">Registration</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
       </ul>
     </nav>
+    
+    
 
     <section id="about" class="section" data-aos="fade-up">
       <h2>About the Conference</h2>
@@ -1160,10 +1167,26 @@
 
       updateCountdown();
 
+     
+
+    
       function toggleMenu() {
-        const navLinks = document.getElementById("nav-links");
-        navLinks.classList.toggle("active");
-      }
+    const navLinks = document.getElementById("nav-links");
+    const hamburger = document.getElementById("hamburger");
+
+    navLinks.classList.toggle("active");
+    hamburger.style.display = navLinks.classList.contains("active") ? "none" : "block";
+  }
+
+  function closeMenu() {
+    const navLinks = document.getElementById("nav-links");
+    const hamburger = document.getElementById("hamburger");
+
+    navLinks.classList.remove("active");
+    hamburger.style.display = "block";
+  }
+
+
     </script>
   </body>
 </html>
