@@ -14,7 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <style>
+     <style>
       :root {
         --primary-color: #160085;
         --secondary-color: #5c34fc;
@@ -446,7 +446,7 @@
         background: var(--gradient);
         color: white;
         text-align: center;
-        padding: 4rem 2rem;
+        padding: 2rem 2rem;
         margin-top: 4rem;
       }
 
@@ -522,15 +522,99 @@
 
       .map {
         flex: 1;
-        max-width: 45%;
+        max-width: 50%;
+        margin-top: 90px;
       }
 
       .map iframe {
         width: 100%;
-        height: 300px;
+        height: 400px;
         border: 0;
         border-radius: 10px;
       }
+
+      .navbar .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 450px) {
+        .header-image img {
+          width: 60px;
+          height: 60px;
+        }
+
+        .about-card {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .reverse-layout {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .contact-container {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .map {
+          min-width: 100%;
+        }
+
+        .contact-details {
+          min-width: 100%;
+        }
+      }
+
+  .general-card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .general-content ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .general-content ol li {
+    margin-bottom: 0.8rem;
+  }
+
+  .general-content ol li:last-child {
+    margin-bottom: 0;
+  }
+      @media (max-width: 420px) {
+        .navbar ul {
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 50px;
+          left: 0px;
+          padding: 10px;
+          border-radius: 5px;
+          width: 100%;
+        }
+
+        .navbar .hamburger {
+          display: block;
+        }
+
+        .navbar ul.active {
+          display: flex;
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -587,10 +671,12 @@
     </header>
 
     <nav class="navbar">
-      <ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#topics">Topics</a></li>
         <li><a href="#dates">Important Dates</a></li>
+        <li><a href="#general">General Instructions</a></li>
         <li><a href="#registration">Registration</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -799,13 +885,53 @@
       </div>
     </section>
 
+    <section id="general" class="section" data-aos="fade-up">
+      <h2>General Instructions</h2>
+      <div class="general-card">
+        <div class="general-content">
+          <ol>
+            <li>Only papers in IEEE format will be accepted.</li> 
+            <li>Fees can be paid only after the acceptance of the paper.</li>
+            <li>On-spot registration is not allowed.</li>
+            <li>
+              Certificates will be issued only to those who present their paper.
+              Registration alone does not entitle one to a certificate.
+            </li>
+            <li>Certificates will be provided to all participants.</li>
+            <li>Presentations can be conducted both online and offline.</li>
+            <li>
+              Offline participants will be provided with food, a kit, and a hard
+              copy of the certificate.
+            </li>
+            <li>
+              Online participants will receive only a soft copy of the
+              certificate.
+            </li>
+            <li>
+              Bus facilities will be available from Perundurai in the morning
+              and evening.
+            </li>
+            <li>CSI members must provide valid proof of membership.</li>
+            <li>
+              Participants must bring their college ID card when attending in
+              person.
+            </li>
+            <li>
+              <strong> If a team contains both CSI and Non-CSI members, then the registration amount is Rs.300. </strong>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <br />
+    </section>
+
     <section id="registration" class="section" data-aos="fade-up">
       <h2>Registration</h2>
       <table class="registration-table">
         <thead>
           <tr>
             <th>Category</th>
-            <th>Amount</th>
+            <th>Amount (Per Team)</th>
           </tr>
         </thead>
         <tbody>
@@ -854,6 +980,7 @@
         </div>
       </div>
     </section>
+
     <section id="contact" class="section" data-aos="fade-up">
       <h2>Contact Details</h2>
       <div class="contact-container">
@@ -862,32 +989,48 @@
           <p>
             <strong>Vruthika L S</strong><br />
             Joint Secretary, CSI - KEC Student Branch<br />
-            Department of Computer Science Engineering<br />
-            Kongu Engineering College, Perundurai<br />
             +91 9345899429<br />
-            <a href="mailto:vruthikals.22cse@kongu.edu"
-              >vruthikals.22cse@kongu.edu</a
+            <a href="mailto:csikec.ncitt@gmail.com"
+              >csikec.ncitt@gmail.com</a
             >
           </p>
           <hr />
           <p>
             <strong>Thamil Vasanth G K</strong><br />
-            Executive Member,CSI - KEC Student Branch<br />
-            Department of Computer Science Engineering<br />
-            Kongu Engineering College, Perundurai<br />
-            +91 6380198466 (phone) / +91 9514594776 (whatsApp) <br />
-            <a href="mailto:thamilvasanthgk.22cse@kongu.edu"
-              >thamilvasanthgk.22cse@kongu.edu</a
+            Executive Member, CSI - KEC Student Branch<br />
+            +91 6380198466 (Phone) / +91 9514594776 (WhatsApp) <br />
+            <a href="mailto:csikec.ncitt@gmail.com"
+              >csikec.ncitt@gmail.com</a
             >
           </p>
+          <hr/>
+          <p>
+            <strong>Harsha Vardhini R A</strong><br />
+            Secretary, CSI - KEC Student Branch<br />
+            +91 89731 91909 <br />
+            <a href="mailto:csikec.ncitt@gmail.com"
+              >csikec.ncitt@gmail.com</a
+            >
+          </p>
+          <hr />
+          <p>
+            <strong>Mohan R</strong><br />
+            Joint Secretary, CSI - KEC Student Branch<br />
+            +91 87782 65712<br />
+            <a href="mailto:csikec.ncitt@gmail.com"
+              >csikec.ncitt@gmail.com</a
+            >
+          </p>
+          <hr />
         </div>
 
         <!-- Map Section -->
+
         <div class="map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.3111459449175!2d77.6091683146475!3d11.275579591982583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e3c8cfdc3c7%3A0x6844d2422a742843!2sKongu%20Engineering%20College!5e0!3m2!1sen!2sin!4v1676044776239!5m2!1sen!2sin"
             width="400"
-            height="300"
+            height="400"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -1016,6 +1159,11 @@
       }
 
       updateCountdown();
+
+      function toggleMenu() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("active");
+      }
     </script>
   </body>
 </html>
